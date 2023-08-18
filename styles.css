@@ -1,0 +1,34 @@
+/* Tämä on styles.css -tiedosto */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #c836b9;
+    text-align: center;
+}
+
+h2 {
+    color: #c836b9;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #ff00bb;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+body {
+    background-color: #fbc5f7;
+    /* Muuta taustaväri haluamaksesi */
+}

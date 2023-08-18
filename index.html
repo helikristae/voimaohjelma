@@ -3,28 +3,52 @@
 
 <head>
     <title>Smolov</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Smolov</h1>
-    <label for="numberInput">Syötä kyykkyennätys:</label>
+    <h1>Smolov-ohjelman perusjakso</h1>
+    <label for="numberInput">Syötä kyykky- tai penkkipunnerrusennätyksesi:</label>
     <input type="number" id="numberInput">
     <button onclick="calculate()">Laske päivät</button>
+
     <h2>Viikko 1</h2>
     <p id="mondayResult"></p>
     <p id="wednesdayResult"></p>
     <p id="fridayResult"></p>
+
     <h2>Viikko 2</h2>
     <p id="mondayResultTwo"></p>
     <p id="wednesdayResultTwo"></p>
+    <p id="fridayResultTwo"></p>
+
+    <h2>Viikko 3</h2>
+    <p id="mondayResultThree"></p>
+    <p id="wednesdayResultThree"></p>
+    <p id="fridayResultThree"></p>
+
+
     <script>
         function calculate() {
             var userInput = parseFloat(document.getElementById("numberInput").value);
-            var resultMonday = userInput * 0.8;
-            var resultWednesday = userInput * 0.85;
-            var resultFriday = userInput * 0.9;
+
+            //ekan viikon painot
+            var resultMonday = userInput * 0.75;
+            var resultWednesday = userInput * 0.80;
+            var resultFriday = userInput * 0.85;
+
+            //toisen viiko painot
             var resultMondayTwo = resultMonday + 5;
             var resultWednesdayTwo = resultWednesday + 5;
+            var resultFridayTwo = resultFriday + 5;
+
+            //kolmannen viikon painot
+            var resultMondayThree = resultMonday + 10;
+            var resultWednesdayThree = resultWednesday + 10;
+            var resultFridayThree = resultFriday + 10;
+
+
+            //ensimmäinen viikko
 
             var mondayResultElement = document.getElementById("mondayResult");
             mondayResultElement.textContent = "Maanantai 5x7x" + resultMonday + "kg";
@@ -41,6 +65,20 @@
 
             var wednesdayResultTwoElement = document.getElementById("wednesdayResultTwo");
             wednesdayResultTwoElement.textContent = "Keskiviikko 7x5x" + resultWednesdayTwo + "kg";
+
+            var fridayResultTwoElement = document.getElementById("fridayResultTwo");
+            fridayResultTwoElement.textContent = "Perjantai 10x3x" + resultFridayTwo + "kg";
+
+            // kolmas viikko
+
+            var mondayResultThreeElement = document.getElementById("mondayResultThree");
+            mondayResultThreeElement.textContent = "Maanantai 5x7x" + resultMondayThree + "kg";
+
+            var wednesdayResultThreeElement = document.getElementById("wednesdayResultThree");
+            wednesdayResultThreeElement.textContent = "Keskiviikko 7x5x" + resultWednesdayThree + "kg";
+
+            var fridayResultThreeElement = document.getElementById("fridayResultThree");
+            fridayResultThreeElement.textContent = "Perjantai 10x3x" + resultFridayThree + "kg";
 
         }
     </script>
